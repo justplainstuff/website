@@ -1,0 +1,7 @@
+.env
+.env.test
+.out
+data.db*
+.DS_Store
+node_modules
+coverage
