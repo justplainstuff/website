@@ -3,8 +3,8 @@ import { join } from "node:path";
 import env from "app/config/env";
 import MarkdownIt from "markdown-it";
 import { getLogger } from "plainstack";
-import slugify from "slugify";
 import { bundledLanguages, getHighlighter } from "shiki";
+import slugify from "slugify";
 
 const log = getLogger("page");
 
@@ -56,7 +56,7 @@ export async function createMarkdownRenderer() {
 export async function renderPage(
   fileName: string,
   fileContent: string,
-  md: MarkdownIt
+  md: MarkdownIt,
 ): Promise<Page> {
   const html = md.render(fileContent);
   const slug = fileName.replace(".md", "").split("-").slice(1).join("-");
@@ -126,7 +126,7 @@ export async function getDocumentationPages(): Promise<Page[]> {
       const filePath = join(docsDirectory, file);
       const fileContent = await readFile(filePath, "utf-8");
       return await renderPage(file, fileContent, md);
-    })
+    }),
   );
   cache = pages;
   return pages;

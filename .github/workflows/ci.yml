@@ -20,6 +20,9 @@ jobs:
       SMTP_USER: user@example.com
       SMTP_PASS: password
       LOG_LEVEL: debug
+      CF_TURNSTILE_SECRET: secret
+      CF_TURNSTILE_SITEKEY: sitekey
+      ADMIN_PASSWORD: password
     steps:
       - uses: actions/checkout@v4
         name: checkout code 📥

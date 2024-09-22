@@ -1,9 +1,9 @@
+import { describe, test } from "node:test";
 import database from "app/config/database";
 import { GET } from "app/routes/double-opt-in";
+import { expect } from "expect";
 import { createRequest } from "node-mocks-http";
 import { outbox, randomId, rollback, testHandler } from "plainstack";
-import { describe, test } from "node:test";
-import { expect } from "expect";
 
 describe("double opt in", () => {
   test("send email with correct token and email", async () => {
