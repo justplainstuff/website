@@ -5,7 +5,7 @@ import errorHandler from "errorhandler";
 import type { NextFunction, Request, Response } from "express";
 import express from "express";
 import { defineHttp, dev, middleware, prod } from "plainstack";
-import WebSocket from "ws";
+import { WebSocketServer } from "ws";
 
 const redirects: Record<string, string> = {
   "/docs/environmet-variables": "/docs/environment-variables",
@@ -38,7 +38,7 @@ export default defineHttp(async ({ http, paths }) => {
   if (prod()) app.use(middleware.rateLimit());
   app.use(await middleware.fileRouter());
   const server = httpServer.createServer(app);
-  const wss = new WebSocket.Server({ server });
+  const wss = new WebSocketServer({ server });
   await listenWebsocket(wss);
   server.listen(http.port);
   return app;

@@ -4,6 +4,7 @@ import env from "app/config/env";
 import MarkdownIt from "markdown-it";
 import { getLogger } from "plainstack";
 import slugify from "slugify";
+import { bundledLanguages, getHighlighter } from "shiki";
 
 const log = getLogger("page");
 
@@ -27,7 +28,6 @@ let renderer: MarkdownIt;
 
 export async function createMarkdownRenderer() {
   if (renderer) return renderer;
-  const { bundledLanguages, getHighlighter } = await import("shiki");
 
   const highlighter = await getHighlighter({
     themes: ["dracula-soft"],
@@ -41,8 +41,9 @@ export async function createMarkdownRenderer() {
     },
   });
 
+  const markdownItAnchor = (await import("markdown-it-anchor")).default;
   // Add any additional plugins or customizations here
-  md.use(require("markdown-it-anchor"), {
+  md.use(markdownItAnchor, {
     permalink: true,
     permalinkBefore: true,
     permalinkSymbol: "#",
@@ -55,7 +56,7 @@ export async function createMarkdownRenderer() {
 export async function renderPage(
   fileName: string,
   fileContent: string,
-  md: MarkdownIt,
+  md: MarkdownIt
 ): Promise<Page> {
   const html = md.render(fileContent);
   const slug = fileName.replace(".md", "").split("-").slice(1).join("-");
@@ -125,7 +126,7 @@ export async function getDocumentationPages(): Promise<Page[]> {
       const filePath = join(docsDirectory, file);
       const fileContent = await readFile(filePath, "utf-8");
       return await renderPage(file, fileContent, md);
-    }),
+    })
   );
   cache = pages;
   return pages;

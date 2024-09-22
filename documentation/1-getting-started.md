@@ -6,11 +6,11 @@ Run the following command to create a new plainstack starter project:
 npm create plainstack
 ```
 
-You need Node and [pnpm](https://pnpm.io/) installed. plainstack uses Node 20.10.0 or higher and pnpm 9.5.0 or higher.
+You need Node and [pnpm](https://pnpm.io/) installed. plainstack uses Node 22.9.0 or higher and pnpm 9.5.0 or higher.
 
 ```bash
 node --version
-> v20.10.0
+> v22.9.0
 ```
 
 ```bash
