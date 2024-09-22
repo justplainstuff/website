@@ -13,13 +13,13 @@ jobs:
       matrix:
         os: [ubuntu-latest]
     env:
-      NODE_ENV: development
+      NODE_ENV: test
       PORT: 3000
       DB_URL: data.db
       SMTP_HOST: smtp.example.com
       SMTP_USER: user@example.com
       SMTP_PASS: password
-      LOG_LEVEL: debug
+      LOG_LEVEL: info
       CF_TURNSTILE_SECRET: secret
       CF_TURNSTILE_SITEKEY: sitekey
       ADMIN_PASSWORD: password
