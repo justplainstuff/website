@@ -15,7 +15,7 @@ jobs:
     env:
       NODE_ENV: test
       PORT: 3000
-      DB_URL: data.db
+      DB_URL: data-test.db
       SMTP_HOST: smtp.example.com
       SMTP_USER: user@example.com
       SMTP_PASS: password
@@ -43,10 +43,10 @@ jobs:
         run: pnpm migrate foobar
       - name: run migration ✅
         run: pnpm migrate
-      - name: seed ✅
-        run: pnpm pls seed
       - name: test ✅
         run: pnpm test
+      - name: seed ✅
+        run: pnpm pls seed
       - name: routes ✅
         run: pnpm pls routes
       - name: doctor ✅
