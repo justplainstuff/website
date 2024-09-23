@@ -2,6 +2,7 @@
 .env.test
 .out
 data.db*
+data-test.db*
 .DS_Store
 node_modules
 coverage

@@ -54,7 +54,7 @@ describe("double opt in", () => {
         .selectFrom("contacts")
         .selectAll()
         .executeTakeFirstOrThrow();
-      expect(contact?.doubleOptInConfirmed).toBe(null);
+      expect(contact.doubleOptInConfirmed).toBe(null);
       expect(res._getStatusCode()).toBe(200);
       expect(res._getData().includes("Invalid")).toBe(true);
     });

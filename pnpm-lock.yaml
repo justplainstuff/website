@@ -39,8 +39,8 @@ importers:
         specifier: ^9.0.1
         version: 9.2.0(@types/markdown-it@14.1.2)(markdown-it@14.1.0)
       plainstack:
-        specifier: ^0.0.27
-        version: 0.0.27(@kitajs/html@4.2.2)(better-sqlite3@11.3.0)(esbuild@0.23.1)(express@4.21.0)(kysely-codegen@0.16.8(better-sqlite3@11.3.0)(kysely@0.27.4))(kysely@0.27.4)(tailwindcss@3.4.12)(tsx@4.19.1)(typescript@5.6.2)(vitest@2.1.1(@types/node@22.5.5))(zod@3.23.8)
+        specifier: ^0.0.30
+        version: 0.0.30(@kitajs/html@4.2.2)(better-sqlite3@11.3.0)(esbuild@0.23.1)(express@4.21.0)(kysely-codegen@0.16.8(better-sqlite3@11.3.0)(kysely@0.27.4))(kysely@0.27.4)(tailwindcss@3.4.12)(tsx@4.19.1)(typescript@5.6.2)(vitest@2.1.1(@types/node@22.5.5))(zod@3.23.8)
       shiki:
         specifier: ^1.7.0
         version: 1.18.0
@@ -933,8 +933,8 @@ packages:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
 
-  chokidar@4.0.0:
-    resolution: {integrity: sha512-mxIojEAQcuEvT/lyXq+jf/3cO/KoA6z4CeNDGGevTybECPOMFCnQy3OPahluUkbqgPNGw5Bi78UC7Po6Lhy+NA==}
+  chokidar@4.0.1:
+    resolution: {integrity: sha512-n8enUVCED/KVRQlab1hr3MVpcVMvxtZjmEa956u+4YijlmQED223XMSYj2tLuKvr4jcCTzNNMpQDUer72MMmzA==}
     engines: {node: '>= 14.16.0'}
 
   chownr@1.1.4:
@@ -1837,8 +1837,8 @@ packages:
     peerDependencies:
       better-sqlite3: ^11.0.0
 
-  plainstack@0.0.27:
-    resolution: {integrity: sha512-VID/RZGP5BnmVJ1Rv6nufmBaB/Q1vSFMguF/nREUqaUlEP3TbnXPKCtvQmg9pKWRyHJfo2RhBtgmY8ghtLFc9Q==}
+  plainstack@0.0.30:
+    resolution: {integrity: sha512-/cW0dSlB1ZNXbo2DVpBMHznX9BBE3YSZaGzBHCbPL1OKHKlVOrYXqP2CNdTfxIk+apxIAJs8faqY4u68B+kTNg==}
     hasBin: true
     peerDependencies:
       '@kitajs/html': ^4.2.1
@@ -3085,7 +3085,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  chokidar@4.0.0:
+  chokidar@4.0.1:
     dependencies:
       readdirp: 4.0.1
 
@@ -4003,11 +4003,11 @@ snapshots:
       better-sqlite3: 11.3.0
       cron-parser: 4.9.0
 
-  plainstack@0.0.27(@kitajs/html@4.2.2)(better-sqlite3@11.3.0)(esbuild@0.23.1)(express@4.21.0)(kysely-codegen@0.16.8(better-sqlite3@11.3.0)(kysely@0.27.4))(kysely@0.27.4)(tailwindcss@3.4.12)(tsx@4.19.1)(typescript@5.6.2)(vitest@2.1.1(@types/node@22.5.5))(zod@3.23.8):
+  plainstack@0.0.30(@kitajs/html@4.2.2)(better-sqlite3@11.3.0)(esbuild@0.23.1)(express@4.21.0)(kysely-codegen@0.16.8(better-sqlite3@11.3.0)(kysely@0.27.4))(kysely@0.27.4)(tailwindcss@3.4.12)(tsx@4.19.1)(typescript@5.6.2)(vitest@2.1.1(@types/node@22.5.5))(zod@3.23.8):
     dependencies:
       '@kitajs/html': 4.2.2
       '@paralleldrive/cuid2': 2.2.2
-      chokidar: 4.0.0
+      chokidar: 4.0.1
       consola: 3.2.3
       defu: 6.1.4
       dotenv: 16.4.5
