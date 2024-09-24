@@ -39,5 +39,5 @@ COPY --from=build /app /app
 RUN mkdir -p /data
 VOLUME /data
 EXPOSE 3000
-CMD pnpm --prefix web serve
+CMD pnpm pls serve
 
