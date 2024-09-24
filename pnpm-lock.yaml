@@ -40,12 +40,17 @@ importers:
         version: 9.2.0(@types/markdown-it@14.1.2)(markdown-it@14.1.0)
       plainstack:
 <<<<<<< HEAD
+<<<<<<< HEAD
         specifier: ^0.0.30
         version: 0.0.30(@kitajs/html@4.2.2)(better-sqlite3@11.3.0)(esbuild@0.23.1)(express@4.21.0)(kysely-codegen@0.16.8(better-sqlite3@11.3.0)(kysely@0.27.4))(kysely@0.27.4)(tailwindcss@3.4.13)(tsx@4.19.1)(typescript@5.6.2)(vitest@2.1.1(@types/node@22.7.4))(zod@3.23.8)
 =======
         specifier: ^0.0.32
         version: 0.0.32(@kitajs/html@4.2.2)(better-sqlite3@11.3.0)(esbuild@0.23.1)(express@4.21.0)(kysely-codegen@0.16.8(better-sqlite3@11.3.0)(kysely@0.27.4))(kysely@0.27.4)(tailwindcss@3.4.12)(tsx@4.19.1)(typescript@5.6.2)(vitest@2.1.1(@types/node@22.5.5))(zod@3.23.8)
 >>>>>>> b02f108 (fix: update plainstack)
+=======
+        specifier: ^0.0.33
+        version: 0.0.33(@kitajs/html@4.2.2)(better-sqlite3@11.3.0)(esbuild@0.23.1)(express@4.21.0)(kysely-codegen@0.16.8(better-sqlite3@11.3.0)(kysely@0.27.4))(kysely@0.27.4)(tailwindcss@3.4.12)(tsx@4.19.1)(typescript@5.6.2)(vitest@2.1.1(@types/node@22.5.5))(zod@3.23.8)
+>>>>>>> 497edb7 (fix: serving)
       shiki:
         specifier: ^1.7.0
         version: 1.21.0
@@ -1842,8 +1847,8 @@ packages:
     peerDependencies:
       better-sqlite3: ^11.0.0
 
-  plainstack@0.0.32:
-    resolution: {integrity: sha512-m+ZdBl9C72eo8U/UBRHnGcxFkDe61ZWXpSCWnKArhOTwnD/3K3P3D5cGeOO/s8soEtYwkPifjYS89/h3ZKd3hQ==}
+  plainstack@0.0.33:
+    resolution: {integrity: sha512-NJXndlJ7Pm0PMAD3xYDPvKIeo4LTZXWinCmcC/z66W5strpNOXs2EUWryM9Lpwo3lNtnPJmZuOxoSKMf3w4wHg==}
     hasBin: true
     peerDependencies:
       '@kitajs/html': ^4.2.1
@@ -4011,10 +4016,14 @@ snapshots:
       cron-parser: 4.9.0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   plainstack@0.0.30(@kitajs/html@4.2.2)(better-sqlite3@11.3.0)(esbuild@0.23.1)(express@4.21.0)(kysely-codegen@0.16.8(better-sqlite3@11.3.0)(kysely@0.27.4))(kysely@0.27.4)(tailwindcss@3.4.13)(tsx@4.19.1)(typescript@5.6.2)(vitest@2.1.1(@types/node@22.7.4))(zod@3.23.8):
 =======
   plainstack@0.0.32(@kitajs/html@4.2.2)(better-sqlite3@11.3.0)(esbuild@0.23.1)(express@4.21.0)(kysely-codegen@0.16.8(better-sqlite3@11.3.0)(kysely@0.27.4))(kysely@0.27.4)(tailwindcss@3.4.12)(tsx@4.19.1)(typescript@5.6.2)(vitest@2.1.1(@types/node@22.5.5))(zod@3.23.8):
 >>>>>>> b02f108 (fix: update plainstack)
+=======
+  plainstack@0.0.33(@kitajs/html@4.2.2)(better-sqlite3@11.3.0)(esbuild@0.23.1)(express@4.21.0)(kysely-codegen@0.16.8(better-sqlite3@11.3.0)(kysely@0.27.4))(kysely@0.27.4)(tailwindcss@3.4.12)(tsx@4.19.1)(typescript@5.6.2)(vitest@2.1.1(@types/node@22.5.5))(zod@3.23.8):
+>>>>>>> 497edb7 (fix: serving)
     dependencies:
       '@kitajs/html': 4.2.2
       '@paralleldrive/cuid2': 2.2.2
