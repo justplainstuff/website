@@ -11,5 +11,5 @@ export default defineEnv((z) =>
     SMTP_PASS: z.string(),
     CF_TURNSTILE_SECRET: z.string(),
     CF_TURNSTILE_SITEKEY: z.string(),
-  })
+  }),
 );

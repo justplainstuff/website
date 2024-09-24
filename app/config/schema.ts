@@ -18,6 +18,25 @@ export interface Contacts {
   id: string | null;
 }
 
+export interface PlainjobsJobs {
+  createdAt: number;
+  data: string;
+  error: string | null;
+  failedAt: number | null;
+  id: Generated<number | null>;
+  status: Generated<string>;
+  type: string;
+}
+
+export interface PlainjobsScheduledJobs {
+  createdAt: number;
+  cronExpression: string | null;
+  id: Generated<number | null>;
+  nextRun: number | null;
+  status: Generated<string>;
+  type: string;
+}
+
 export interface Sparks {
   last: number;
   nr: Generated<number>;
@@ -25,5 +44,7 @@ export interface Sparks {
 
 export interface DB {
   contacts: Contacts;
+  plainjobsJobs: PlainjobsJobs;
+  plainjobsScheduledJobs: PlainjobsScheduledJobs;
   sparks: Sparks;
 }
