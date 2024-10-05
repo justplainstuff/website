@@ -6,3 +6,4 @@ data-test.db*
 .DS_Store
 node_modules
 coverage
+static/styles.css

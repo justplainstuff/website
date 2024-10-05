@@ -1,12 +1,10 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
-import env from "app/config/env";
 import MarkdownIt from "markdown-it";
-import { getLogger } from "plainstack";
 import { bundledLanguages, getHighlighter } from "shiki";
 import slugify from "slugify";
-
-const log = getLogger("page");
+import { prod } from "plainstack";
+import consola from "consola";
 
 type Page = {
   title: string;
@@ -56,7 +54,7 @@ export async function createMarkdownRenderer() {
 export async function renderPage(
   fileName: string,
   fileContent: string,
-  md: MarkdownIt,
+  md: MarkdownIt
 ): Promise<Page> {
   const html = md.render(fileContent);
   const slug = fileName.replace(".md", "").split("-").slice(1).join("-");
@@ -106,8 +104,8 @@ export async function renderPage(
 }
 
 export async function getDocumentationPages(): Promise<Page[]> {
-  if (cache.length && env.NODE_ENV === "production") {
-    log.info("Using cached documentation pages");
+  if (cache.length && prod()) {
+    consola.info("Using cached documentation pages");
     return cache;
   }
   const docsDirectory = join(process.cwd(), "documentation");
@@ -126,7 +124,7 @@ export async function getDocumentationPages(): Promise<Page[]> {
       const filePath = join(docsDirectory, file);
       const fileContent = await readFile(filePath, "utf-8");
       return await renderPage(file, fileContent, md);
-    }),
+    })
   );
   cache = pages;
   return pages;

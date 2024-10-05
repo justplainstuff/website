@@ -349,3 +349,19 @@ export function LogsIcon() {
     </svg>
   );
 }
+
+export const pageIcons: Record<string, string | Promise<string>> = {
+  motivation: LeafIcon(),
+  "getting-started": PlayIcon(),
+  "directory-structure": FolderTreeIcon(),
+  routing: RouteIcon(),
+  "request-handling": PhoneIncomingIcon(),
+  database: DatabaseIcon(),
+  "environment-variables": ContainerIcon(),
+  testing: TestTubeDiagonalIcon(),
+  "background-jobs": ListTodoIcon(),
+  logging: LogsIcon(),
+  deployment: CloudUploadIcon(),
+  recipes: PizzaIcon(),
+  schedules: ClockIcon(),
+};

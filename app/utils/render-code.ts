@@ -1,9 +1,10 @@
-const cache = new Map<string, string>();
 import { codeToHtml } from "shiki";
+
+const cache = new Map<string, string>();
 
 export async function renderCode(
   code: string,
-  lang: "bash" | "tsx" | "typescript" = "typescript",
+  lang: "bash" | "tsx" | "typescript" = "typescript"
 ): Promise<string> {
   if (cache.has(code)) {
     return cache.get(code) as string;

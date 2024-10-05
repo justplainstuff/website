@@ -16,12 +16,11 @@ export async function PlatformSection() {
         Use the Platform
       </h2>
       <p class="text-3xl font-bold text-center mt-6 text-base-content/70">
-        If you know <span class="underline decoration-primary">web</span>, you
-        know plainstack
+        If you know web, you know plainstack
       </p>
       <div class="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {webConcepts.map((concept) => (
-          <div class="bg-base-200 p-4 rounded-lg flex items-center">
+          <div class="bg-base-200 p-4 rounded-lg flex items-center shadow-sm">
             <svg
               class="w-6 h-6 text-success mr-3 flex-shrink-0"
               fill="none"
