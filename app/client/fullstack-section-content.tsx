@@ -17,6 +17,7 @@ export function FullstackSectionContent(props: { features: Feature[] }) {
                 icon={feature.icon}
                 title={feature.title}
                 description={feature.description}
+                clicked={idx === i}
               />
             </div>
           ))}
