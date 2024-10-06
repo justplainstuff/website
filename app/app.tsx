@@ -65,7 +65,7 @@ app.get(
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="color-scheme" content="light dark" />
-          <title>{title || "Fullstack Web Apps Plain and Simple"}</title>
+          <title>{title || "Fullstack Web Apps For Typescript"}</title>
           <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <link rel="stylesheet" href="/static/styles.css" />
           <script src="https://unpkg.com/htmx.org@2.0.3" />
