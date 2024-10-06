@@ -46,7 +46,8 @@ app.use(
     const url = new URL(c.req.url);
     if (url.host === "plainweb.dev") {
       return c.redirect(
-        `https://www.plainstack.dev${url.pathname}${url.search}`
+        `https://www.plainstack.dev${url.pathname}${url.search}`,
+        301
       );
     }
     await next();
