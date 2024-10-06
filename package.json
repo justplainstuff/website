@@ -9,11 +9,12 @@
     "test": "bun test"
   },
   "dependencies": {
+    "change-case": "^5.4.4",
     "consola": "^3.2.3",
     "hono": "^4.6.3",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.0.1",
-    "plainstack": "^0.0.44",
+    "plainstack": "^0.0.46",
     "shiki": "^1.7.0",
     "slugify": "^1.6.6",
     "zod": "^3.23.8"

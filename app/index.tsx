@@ -4,15 +4,17 @@ import { serveStatic } from "hono/bun";
 import { logger } from "hono/logger";
 import { DiscordIcon, GithubIcon, pageIcons } from "./components/icons";
 import { HeroSection } from "./components/hero-section";
-import { FullstackSection } from "./components/fullstack-section";
-import { ShippingSection } from "./components/shipping-section";
-import { PlatformSection } from "./components/platform-section";
+import { features, FullstackSection } from "./components/fullstack-section";
 import { SignupSection } from "./components/signup-section";
 import { FooterSection } from "./components/footer-section";
 import { getDocumentationPages, getHeadingId } from "app/utils/page";
 import { raw } from "hono/html";
 import consola from "consola";
 import { prod } from "plainstack";
+import { render } from "plainstack/client";
+import { build } from "plainstack/bun";
+import { StackSection } from "app/components/stack-section";
+import { FullstackSectionContent } from "app/client/fullstack-section-content";
 
 declare module "hono" {
   interface ContextRenderer {
@@ -34,6 +36,9 @@ if (prod()) {
 }
 
 const app = new Hono();
+
+const result = await build({ entrypoints: "app/client", outdir: "static" });
+console.log(result);
 
 app.use(logger());
 app.use("/static/*", serveStatic({ root: "./" }));
@@ -120,10 +125,10 @@ app.get("/", async (c) => {
     <>
       <HeroSection />
       <FullstackSection />
-      <ShippingSection />
-      <PlatformSection />
+      <StackSection />
       <SignupSection />
       <FooterSection />
+      {render(FullstackSectionContent, { path: "/static" }, { features })}
     </>
   );
 });

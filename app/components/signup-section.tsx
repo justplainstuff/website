@@ -4,7 +4,7 @@ export function SignupSection() {
   return (
     <div class="mx-auto max-w-5xl pb-24 py-10 sm:pb-32 px-4 md:px-8 text-center text-base-content">
       <h2 class="text-5xl md:text-6xl font-bold tracking-tight text-center">
-        Join our Discord to Hang Out ✌️
+        Join Our Discord to Hang Out ✌️
       </h2>
 
       <div class="items-center">

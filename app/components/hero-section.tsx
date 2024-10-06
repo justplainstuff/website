@@ -11,7 +11,7 @@ export async function HeroSection() {
   return (
     <div class="mx-auto max-w-5xl pb-24 py-10 sm:pb-32 px-4 md:px-8 mt-20 lg:mt-26">
       <h1 class="text-7xl md:text-8xl font-bold tracking-tight text-base-content text-center">
-        TypeScript web apps
+        Fullstack web apps
         <br /> <span class="underline decoration-primary">plain</span> and
         simple
       </h1>
