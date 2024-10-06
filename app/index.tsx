@@ -37,8 +37,7 @@ if (prod()) {
 
 const app = new Hono();
 
-const result = await build({ entrypoints: "app/client", outdir: "static" });
-console.log(result);
+await build({ entrypoints: "app/client", outdir: "static" });
 
 app.use(logger());
 app.use("/static/*", serveStatic({ root: "./" }));
