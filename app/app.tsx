@@ -44,7 +44,7 @@ app.use(logger());
 app.use(
   createMiddleware(async (c, next) => {
     const url = new URL(c.req.url);
-    if (url.host === "plainweb.dev" || url.host === "www.plainstack.dev") {
+    if (url.host === "plainweb.dev" || url.host === "www.plainweb.dev") {
       return c.redirect(
         `https://www.plainstack.dev${url.pathname}${url.search}`,
         301
