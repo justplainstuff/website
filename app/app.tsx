@@ -9,7 +9,7 @@ import { SignupSection } from "./components/signup-section";
 import { FooterSection } from "./components/footer-section";
 import { getDocumentationPages, getHeadingId } from "app/utils/page";
 import { raw } from "hono/html";
-import consola from "consola";
+import consola, { Consola } from "consola";
 import { prod } from "plainstack";
 import { render } from "plainstack/client";
 import { build } from "plainstack/bun";
@@ -44,7 +44,7 @@ app.use(logger());
 app.use(
   createMiddleware(async (c, next) => {
     const url = new URL(c.req.url);
-    if (url.host === "plainweb.dev") {
+    if (url.host === "plainweb.dev" || url.host === "www.plainstack.dev") {
       return c.redirect(
         `https://www.plainstack.dev${url.pathname}${url.search}`,
         301
