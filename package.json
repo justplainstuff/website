@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"bun run --hot app/index.tsx\" \"tailwindcss -i ./app/styles.css -o ./static/styles.css --watch \"",
-    "build": "tsc --noEmit && tailwindcss -i ./app/styles.css -o ./static/styles.css --minify && PN_BUILD=1 bun run app/index.tsx",
+    "build": "tsc --noEmit && tailwindcss -i ./app/styles.css -o ./static/styles.css --minify && PS_BUILD=1 bun run app/index.tsx",
     "test": "bun test"
   },
   "dependencies": {
