@@ -35,8 +35,7 @@ COPY --from=prerelease /usr/src/app/static static
 COPY --from=prerelease /usr/src/app/tsconfig.json tsconfig.json
 COPY --from=prerelease /usr/src/app/documentation documentation
 
-
 # run the app
 USER bun
 EXPOSE 3000/tcp
-ENTRYPOINT [ "bun", "run", "app/index.tsx" ]
+ENTRYPOINT [ "bun", "run", "app/app.tsx" ]

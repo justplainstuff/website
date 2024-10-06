@@ -15,6 +15,7 @@ import { render } from "plainstack/client";
 import { build } from "plainstack/bun";
 import { StackSection } from "app/components/stack-section";
 import { FullstackSectionContent } from "app/client/fullstack-section-content";
+import { createMiddleware } from "hono/factory";
 
 declare module "hono" {
   interface ContextRenderer {
@@ -40,6 +41,17 @@ const app = new Hono();
 await build({ entrypoints: "app/client", outdir: "static" });
 
 app.use(logger());
+app.use(
+  createMiddleware(async (c, next) => {
+    const url = new URL(c.req.url);
+    if (url.host === "plainweb.dev") {
+      return c.redirect(
+        `https://www.plainstack.dev${url.pathname}${url.search}`
+      );
+    }
+    await next();
+  })
+);
 app.use("/static/*", serveStatic({ root: "./" }));
 
 // layout
@@ -128,7 +140,10 @@ app.get("/", async (c) => {
       <SignupSection />
       <FooterSection />
       {render(FullstackSectionContent, { path: "/static" }, { features })}
-    </>
+    </>,
+    {
+      head: <link rel="canonical" href="https://www.plainstack.dev" />,
+    }
   );
 });
 
