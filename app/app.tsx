@@ -9,11 +9,10 @@ import { SignupSection } from "./components/signup-section";
 import { FooterSection } from "./components/footer-section";
 import { getDocumentationPages, getHeadingId } from "app/utils/page";
 import { raw } from "hono/html";
-import consola, { Consola } from "consola";
+import consola from "consola";
 import { prod } from "plainstack";
 import { render } from "plainstack/client";
 import { build } from "plainstack/bun";
-import { StackSection } from "app/components/stack-section";
 import { FullstackSectionContent } from "app/client/fullstack-section-content";
 import { createMiddleware } from "hono/factory";
 
@@ -65,7 +64,7 @@ app.get(
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="color-scheme" content="light dark" />
-          <title>{title || "Fullstack Web Apps For Typescript"}</title>
+          <title>{title || "Simple Fullstack Web Apps"}</title>
           <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <link rel="stylesheet" href="/static/styles.css" />
           <script src="https://unpkg.com/htmx.org@2.0.3" />
