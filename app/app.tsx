@@ -137,7 +137,6 @@ app.get("/", async (c) => {
     <>
       <HeroSection />
       <FullstackSection />
-      <StackSection />
       <SignupSection />
       <FooterSection />
       {render(FullstackSectionContent, { path: "/static" }, { features })}

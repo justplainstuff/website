@@ -126,7 +126,7 @@ export function FullstackSection() {
         Fullstack as in Rails or Laravel
       </h2>
       <p class="text-3xl font-bold text-center mt-6 text-base-content/70">
-        In idiomatic TypeScript
+        Start with a single file, pick the features you need
       </p>
       <div id={kebabCase(FullstackSectionContent.name)}>
         <FullstackSectionContent features={features} />
