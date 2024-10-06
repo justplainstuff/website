@@ -6,6 +6,13 @@ module.exports = {
   },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
-    themes: ["coffee"],
+    themes: [
+      {
+        dim: {
+          ...require("daisyui/src/theming/themes").dim,
+          primary: "white",
+        },
+      },
+    ],
   },
 };
