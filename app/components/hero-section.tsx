@@ -11,9 +11,7 @@ export async function HeroSection() {
   return (
     <div class="mx-auto max-w-5xl pb-24 py-10 sm:pb-32 px-4 md:px-8 mt-20 lg:mt-26">
       <h1 class="text-7xl md:text-8xl font-bold tracking-tight text-base-content text-center">
-        Simple Fullstack <br />
-        Web Apps <br />
-        For Typescript
+        Fullstack Web Apps For Typescript
       </h1>
       <div class="mx-auto max-w-xl flex justify-center items-center space-x-2 mt-12">
         <a
