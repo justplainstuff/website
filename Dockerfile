@@ -26,7 +26,6 @@ COPY . .
 # [optional] tests & build
 ENV NODE_ENV=production
 RUN bun run build
-RUN PS_BUILD=1 bun run app/index.tsx
 
 # copy production dependencies and source code into final image
 FROM base AS release
