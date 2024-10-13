@@ -14,7 +14,7 @@ export async function HeroSection() {
       </h1>
       <div class="mx-auto max-w-xl flex justify-center items-center space-x-2 mt-12">
         <a
-          href="https://github.com/justplainstuff/plainstack?tab=readme-ov-file#get-started"
+          href="https://github.com/justplainstuff/plainstack?tab=readme-ov-file#getting-started"
           class="btn btn-primary"
           preload="preload:init"
         >
