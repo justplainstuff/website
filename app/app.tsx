@@ -63,8 +63,8 @@ app.get(
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="color-scheme" content="light dark" />
-          <title>{title || "Simple Fullstack Web Apps"}</title>
+          <meta name="color-scheme" content="dark" />
+          <title>{title || "The Single-File Web Framework"}</title>
           <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <link rel="stylesheet" href="/static/styles.css" />
           <script src="https://unpkg.com/htmx.org@2.0.3" />
@@ -77,31 +77,14 @@ app.get(
               <a href="/" class="ml-3 mt-1">
                 <img
                   alt="a coffe stain of a mug as logo"
-                  src="/static/images/black-small.webp"
-                  class="h-12 dark:hidden"
-                />
-                <img
-                  alt="a coffe stain of a mug as logo"
                   src="/static/images/white-small.webp"
-                  class="h-12 hidden dark:block"
+                  class="h-8"
                 />
               </a>
             </div>
             <div class="flex-none">
               <div id="docsearch" />
               <ul class="menu menu-horizontal px-1">
-                {hideDocs ? null : (
-                  <li>
-                    <a
-                      aria-label="Read the docs"
-                      href="/docs/getting-started"
-                      preload="mouseover"
-                      class={"text-lg text-base-content"}
-                    >
-                      Documentation
-                    </a>
-                  </li>
-                )}
                 <li>
                   <a
                     aria-label="Check out the project on GitHub"

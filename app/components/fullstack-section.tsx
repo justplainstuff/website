@@ -11,23 +11,6 @@ export type Feature = {
 
 export const features: Feature[] = [
   {
-    icon: "🔄",
-    title: "Tiny API Surface",
-    description: "Pick and choose from a set of functions that compose well",
-    code: await renderCode(
-      `import { store, migrate, rollback, type DB } from "plainstack";
-import { test, dev, prod } from "plainstack";
-import { job, queue, perform, work } from "plainstack";
-import { form } from "plainstack";
-import { session } from "plainstack/session";
-
-// when using bun
-import { bunSqlite, secret } from "plainstack/bun";
-    `,
-      "tsx"
-    ),
-  },
-  {
     icon: "🗄️",
     title: "Database",
     description: "Migrations, CRUD helpers and fully typed queries",
@@ -77,11 +60,60 @@ app.get("/", async (c) => {
     ),
   },
   {
+    icon: "🏞️",
+    title: "Client Components",
+    description: "Render JSX to client components and mount them in the DOM",
+    code: await renderCode(
+      `// counter.tsx
+
+export function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>Count: {count}</p>
+      {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+mount(Counter);
+
+// app.tsx
+
+app.use("/static/*", serveStatic({ root: "./" }));
+
+await build({
+  entrypoints: ["counter.tsx"],
+  outdir: "static",
+});
+
+app.get("/", async (c) => {
+  return c.html(
+    <html lang="en">
+      <body>
+        <div id="counter" />
+        {render(Counter, { path: "/static" })}
+      </body>
+    </html>,
+  );
+});`,
+      "tsx"
+    ),
+  },
+
+  {
     icon: "📝",
     title: "Forms",
     description: "Zod-based form validation",
     code: await renderCode(
-      `app.post("/add", form(entities("items").zod), async (c) => {
+      `function form<T>(schema: z.ZodSchema<T> | Promise<z.ZodSchema<T>>) {
+  return conformValidator(async (formData) =>
+    parseWithZod(formData, { schema: await schema }),
+  );
+}
+
+app.post("/add", form(entities("items").zod), async (c) => {
   const { value } = c.req.valid("form");
   await entities("items").create(value);
   return c.redirect("/");
@@ -126,7 +158,7 @@ export function FullstackSection() {
         Fullstack as in Rails or Laravel
       </h2>
       <p class="text-3xl font-bold text-center mt-6 text-base-content/70">
-        Start with a single file, pick the features you need
+        Start with a single file, with the features you need
       </p>
       <div id={kebabCase(FullstackSectionContent.name)}>
         <FullstackSectionContent features={features} />
