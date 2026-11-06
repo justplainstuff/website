@@ -9,7 +9,7 @@
     "consola": "^3.2.3",
     "hono": "^4.6.3",
     "markdown-it": "^14.1.0",
-    "markdown-it-anchor": "^9.0.1",
+    "markdown-it-anchor": "^10.0.0",
     "plainstack": "latest",
     "shiki": "^1.7.0",
     "slugify": "^1.6.6",
